@@ -25,12 +25,12 @@ export const App = () => {
   }, []);
 
   return (
-    <BackgroundColor darkMode={isDarkMode}>
+    <BackgroundColor darkmode={isDarkMode}>
       <GlobalStyle />
       {isLoading ? <Loader visible={isLoading} /> : null}
       {myData?.map((e: any) => (
         <div key={e.id}>
-          <Text size="medium" darkMode={isDarkMode}>
+          <Text size="medium" darkmode={isDarkMode}>
             {e.price}
           </Text>
           <ProductsMap data={myData} />

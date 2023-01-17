@@ -3,8 +3,8 @@ import { Box, css } from '@mui/system';
 import { theme } from '../../utils/theme';
 
 export const Container = styled(Box)(
-  ({ darkMode }: { darkMode: string }) => css`
-    background-color: ${darkMode === 'dark'
+  ({ darkmode }: { darkmode: string }) => css`
+    background-color: ${darkmode === 'dark'
       ? theme.colors.black
       : theme.colors.iceWhite};
   `,

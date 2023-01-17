@@ -5,14 +5,14 @@ import P from 'prop-types';
 export const Text = ({
   children,
   size,
-  darkMode,
+  darkmode,
 }: {
   children: any;
   size: string;
-  darkMode: string;
+  darkmode: string;
 }) => {
   return (
-    <Container size={size} darkMode={darkMode}>
+    <Container size={size} darkmode={darkmode}>
       <p>{children}</p>
     </Container>
   );
@@ -21,5 +21,5 @@ export const Text = ({
 Text.propTypes = {
   children: P.any.isRequired,
   size: P.string.isRequired,
-  darkMode: P.string,
+  darkmode: P.string,
 };

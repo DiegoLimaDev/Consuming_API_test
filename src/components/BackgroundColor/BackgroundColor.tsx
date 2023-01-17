@@ -4,15 +4,15 @@ import P from 'prop-types';
 
 export const BackgroundColor = ({
   children,
-  darkMode,
+  darkmode,
 }: {
   children: any;
-  darkMode: string;
+  darkmode: string;
 }) => {
-  return <Container darkMode={darkMode}>{children}</Container>;
+  return <Container darkmode={darkmode}>{children}</Container>;
 };
 
 BackgroundColor.propTypes = {
   children: P.node,
-  darkMode: P.string.isRequired,
+  darkmode: P.string.isRequired,
 };

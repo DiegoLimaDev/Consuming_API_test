@@ -21,7 +21,7 @@ export const Loader = ({ visible }: { visible: boolean }) => {
         visible={visible}
         wrapperStyle={TailSpinStyle}
       />
-      <Text size="big" darkMode={isDarkMode}>
+      <Text size="big" darkmode={isDarkMode}>
         Carregando dados...
       </Text>
     </Container>

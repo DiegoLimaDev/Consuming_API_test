@@ -10,11 +10,11 @@ export const Header = () => {
   return (
     <Container>
       <Row justify="space-between">
-        <Text size="title" darkMode="dark">
+        <Text size="title" darkmode="dark">
           Polibras Software
         </Text>
         <Row>
-          <Text size="big" darkMode="dark">
+          <Text size="big" darkmode="dark">
             Modo Escuro
           </Text>
           <MySwitch
