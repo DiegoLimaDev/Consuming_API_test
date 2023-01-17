@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import { MyContext } from '../../utils/GlobalContext';
+import { MyContext, useIsDarkMode } from '../../utils/GlobalContext';
 import { MySwitch } from '../Switch/Switch';
 import { Text } from '../Text/Text';
 import { Container, Row } from './HeaderStyle';
 
 export const Header = () => {
-  const [isDarkMode, setIsDarkMode] = useContext(MyContext);
+  const { isDarkMode, setIsDarkMode } = useIsDarkMode();
 
   return (
     <Container>

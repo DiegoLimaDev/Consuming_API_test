@@ -1,18 +1,24 @@
 import React, { createContext, useState } from 'react';
 import P from 'prop-types';
 
-type isDarkMode = 'light' | 'dark';
+type isDarkModeType = {
+  isDarkMode: string;
+  setIsDarkMode: React.Dispatch<React.SetStateAction<string>>;
+};
 
-export const MyContext = createContext<isDarkMode>('light');
+export const MyContext = createContext<isDarkModeType>({} as isDarkModeType);
 
 export const GlobalContext = ({ children }: { children: any }) => {
-  const [isDarkMode, setIsDarkMode] = useState<isDarkMode>('light');
-  const providedValues = [isDarkMode, setIsDarkMode];
+  const [isDarkMode, setIsDarkMode] = useState('light');
   return (
-    <MyContext.Provider value={providedValues}>{children}</MyContext.Provider>
+    <MyContext.Provider value={{ isDarkMode, setIsDarkMode }}>
+      {children}
+    </MyContext.Provider>
   );
 };
 
 GlobalContext.propTypes = {
   children: P.node,
 };
+
+export const useIsDarkMode = () => React.useContext(MyContext);

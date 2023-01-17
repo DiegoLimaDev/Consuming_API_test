@@ -3,11 +3,11 @@ import { ThreeDots } from 'react-loader-spinner';
 import { Container, TailSpinStyle } from './LoaderStyles';
 import P from 'prop-types';
 import { Text } from '../Text/Text';
-import { MyContext } from '../../utils/GlobalContext';
+import { useIsDarkMode } from '../../utils/GlobalContext';
 import { theme } from '../../utils/theme';
 
 export const Loader = ({ visible }: { visible: boolean }) => {
-  const [isDarkMode, setIsDarkMode] = useContext(MyContext);
+  const { isDarkMode, setIsDarkMode } = useIsDarkMode();
   return (
     <Container>
       <ThreeDots

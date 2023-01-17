@@ -1,14 +1,14 @@
 import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BackgroundColor } from './components/BackgroundColor/BackgroundColor';
 import { Loader } from './components/Loader/Loader';
 import { ProductsMap } from './components/ProductsMap/ProductsMap';
 import { Text } from './components/Text/Text';
 import { GlobalStyle } from './globalStyles';
-import { MyContext } from './utils/GlobalContext';
+import { useIsDarkMode } from './utils/GlobalContext';
 
 export const App = () => {
-  const [isDarkMode, setIsDarkMode] = useContext(MyContext);
+  const { isDarkMode, setIsDarkMode } = useIsDarkMode();
   const [myData, setMyData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
