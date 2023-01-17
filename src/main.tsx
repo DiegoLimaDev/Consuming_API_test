@@ -7,7 +7,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter basename={window.location.pathname || ''}>
       <Routes>
-        <Route path="" element={<App />} />
+        <Route path="/" element={<App />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
