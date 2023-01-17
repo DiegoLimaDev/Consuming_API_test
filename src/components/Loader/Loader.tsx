@@ -1,21 +1,29 @@
-import React from 'react';
-import { TailSpin } from 'react-loader-spinner';
-import { Container } from './LoaderStyles';
+import React, { useContext } from 'react';
+import { ThreeDots } from 'react-loader-spinner';
+import { Container, TailSpinStyle } from './LoaderStyles';
 import P from 'prop-types';
 import { Text } from '../Text/Text';
+import { MyContext } from '../../utils/GlobalContext';
+import { theme } from '../../utils/theme';
 
 export const Loader = ({ visible }: { visible: boolean }) => {
+  const [isDarkMode, setIsDarkMode] = useContext(MyContext);
   return (
     <Container>
-      <TailSpin
-        height="80"
-        width="80"
-        color="#000000"
+      <ThreeDots
+        height="120"
+        width="200"
+        color={
+          isDarkMode === 'dark' ? theme.colors.iceWhite : theme.colors.black
+        }
         ariaLabel="Carregando dados..."
         radius="2"
         visible={visible}
+        wrapperStyle={TailSpinStyle}
       />
-      <Text>Carregando dados...</Text>
+      <Text size="big" darkMode={isDarkMode}>
+        Carregando dados...
+      </Text>
     </Container>
   );
 };
