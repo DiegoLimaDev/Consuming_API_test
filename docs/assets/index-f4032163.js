@@ -323,9 +323,7 @@ Error generating stack: `+i.message+`
 `,tO=Ie(Cr)(()=>We`
     display: block;
     margin: 0 auto;
-  `);Ie(Cr)(()=>We``);const nO=Ie(CP)(()=>We`
-    margin: 5rem;
-  `),rO=Ie.img`
+  `);Ie(Cr)(()=>We``);const nO=Ie(CP)(()=>We``),rO=Ie.img`
   display: block;
   margin: 2rem auto;
 `,oO=Ie(N$)(()=>We`
@@ -333,8 +331,8 @@ Error generating stack: `+i.message+`
   `),iO=Ie(Cr)(()=>We`
     display: block;
     margin: 2rem auto;
-  `),Vv=({visible:e,data:t})=>{const{isDrawerVisible:n,setIsDrawerVisible:r}=jv(),{numberId:o,setNumberId:i}=Bv(),{isDarkMode:s,setIsDarkMode:a}=bo(),l=t.find(u=>u.id===o);return $(rP,{role:"presentation",onClick:()=>r(!n),children:Re(nO,{anchor:"right",open:e,elevation:10,transitionDuration:200,PaperProps:{style:{width:"30%",backgroundColor:s==="light"?_e.colors.iceWhite:_e.colors.black,padding:"2rem"}},children:[$(rO,{src:l==null?void 0:l.image,height:300,width:300}),$(gt,{size:"medium2",darkmode:s,align:"center",children:l==null?void 0:l.title}),Re(cc,{direction:"row",justifyContent:"space-around",alignItems:"center",children:[$(gt,{size:"medium",darkmode:s,align:"right",children:`Categoria: ${l==null?void 0:l.category}`}),$(gt,{size:"medium",darkmode:s,align:"left",children:`Estoque: ${l==null?void 0:l.rating.count}`})]}),$(iO,{children:$(oO,{readOnly:!0,value:Number(l==null?void 0:l.rating.rate),sx:{fontSize:"10rem"}})}),$(gt,{size:"big",darkmode:s,align:"center",margin:"2rem 0",children:`R$${l==null?void 0:l.price}`}),$(gt,{size:"medium2",darkmode:s,align:"center",children:l==null?void 0:l.description})]})})};Vv.propTypes={visible:Je.bool.isRequired,data:Je.array};const sO=Ie(QT)(()=>We`
-    font-size: ${_e.sizes.small};
+  `),Vv=({visible:e,data:t})=>{const{isDrawerVisible:n,setIsDrawerVisible:r}=jv(),{numberId:o,setNumberId:i}=Bv(),{isDarkMode:s,setIsDarkMode:a}=bo(),l=t.find(u=>u.id===o);return $(rP,{role:"presentation",onClick:()=>r(!n),children:Re(nO,{anchor:"right",open:e,elevation:10,transitionDuration:200,PaperProps:{style:{width:"30%",backgroundColor:s==="light"?_e.colors.iceWhite:_e.colors.black,padding:"3rem"}},children:[$(rO,{src:l==null?void 0:l.image,height:300,width:300}),$(gt,{size:"medium2",darkmode:s,align:"center",children:l==null?void 0:l.title}),Re(cc,{direction:"row",justifyContent:"space-around",alignItems:"center",children:[$(gt,{size:"medium",darkmode:s,align:"right",children:`Categoria: ${l==null?void 0:l.category}`}),$(gt,{size:"medium",darkmode:s,align:"left",children:`Estoque: ${l==null?void 0:l.rating.count}`})]}),$(iO,{children:$(oO,{readOnly:!0,value:Number(l==null?void 0:l.rating.rate),sx:{fontSize:"10rem"}})}),$(gt,{size:"big",darkmode:s,align:"center",margin:"2rem 0",children:`R$${l==null?void 0:l.price}`}),$(gt,{size:"medium",darkmode:s,align:"center",children:l==null?void 0:l.description})]})})};Vv.propTypes={visible:Je.bool.isRequired,data:Je.array};const sO=Ie(QT)(()=>We`
+    font-size: ${_e.sizes.medium};
   `),Wv=({children:e,onClick:t})=>$(sO,{onClick:t,children:e});Wv.propTypes={children:Je.any.isRequired,onClick:Je.any.isRequired};const Hv=({data:e})=>{const{value:t,setValue:n}=Dv(),{isDarkMode:r,setIsDarkMode:o}=bo(),{isDrawerVisible:i,setIsDrawerVisible:s}=jv(),{numberId:a,setNumberId:l}=Bv(),u=e.filter(c=>c.title.toLowerCase().includes(t.toLowerCase()));return $(W1,{children:u.length===0?$(q$,{children:$(gt,{size:"title",darkmode:r,children:"Dados não encontrados"})}):Re(Av,{container:!0,rowSpacing:1,columnSpacing:5,children:[u.map(c=>$(Z$,{item:!0,xs:4,md:2,darkmode:r,children:Re(J$,{children:[$(eO,{src:c.image,height:"200",width:"200"}),$(gt,{size:"medium2",darkmode:"light",align:"center",margin:"2rem 0 0 0",children:`${c.title.substring(0,30)}...  `}),$(gt,{size:"medium2",darkmode:"light",align:"center",children:`R$${c.price}`}),$(D$,{direction:"row",children:$(tO,{children:$(Wv,{onClick:()=>{s(!i),l(c.id)},children:"Ver informações"})})})]})},c.id)),$(Vv,{visible:i,data:e})]})})};Hv.propTypes={data:Je.array.isRequired};const aO=QE`
   *{
     margin:0;
@@ -378,7 +376,7 @@ Error generating stack: `+i.message+`
     height: 5rem;
     width: 30rem;
     margin: 0;
-  `),n3=()=>{const{value:e,setValue:t}=Dv(),[n,r]=w.useState("");return $(e3,{children:$(t3,{value:n,onChange:o=>r(o.target.value),placeholder:"Pesquisar",type:"text",onKeyDown:o=>o.key==="Enter"?t(n):null,endAdornment:$(GP,{position:"end",children:$(sT,{"aria-label":"toggle password visibility",edge:"end",onClick:()=>t(n),children:$(y1,{icon:"ion:search-outline",width:25,height:"25",color:_e.colors.black})})})})})},v1=({checked:e,onClick:t})=>$("div",{children:$(Y$,{checked:e,onClick:t,color:"primary"})});v1.propTypes={checked:Je.bool.isRequired,onClick:Je.any.isRequired};const r3=Ie(ko)(()=>We`
+  `),n3=()=>{const{value:e,setValue:t}=Dv();return $(e3,{children:$(t3,{value:e,onChange:n=>t(n.target.value),placeholder:"Pesquisar",type:"text",endAdornment:$(GP,{position:"end",children:$(sT,{"aria-label":"toggle password visibility",edge:"end",children:$(y1,{icon:"ion:search-outline",width:25,height:"25",color:_e.colors.black})})})})})},v1=({checked:e,onClick:t})=>$("div",{children:$(Y$,{checked:e,onClick:t,color:"primary"})});v1.propTypes={checked:Je.bool.isRequired,onClick:Je.any.isRequired};const r3=Ie(ko)(()=>We`
     background-image: url('https://polibrassoftware.com.br/wp-content/uploads/2020/08/imagem-celular-app-polibras-2.jpg');
     background-repeat: no-repeat;
     height: 40rem;
