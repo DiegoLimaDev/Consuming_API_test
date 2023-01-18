@@ -377,7 +377,7 @@ Error generating stack: `+i.message+`
     height: 5rem;
     width: 30rem;
     margin: 0;
-  `),n3=()=>{const{value:e,setValue:t}=Dv(),[n,r]=w.useState("");return $(e3,{children:$(t3,{value:n,onChange:o=>r(o.target.value),placeholder:"Pesquisar",type:"text",endAdornment:$(GP,{position:"end",children:$(sT,{"aria-label":"toggle password visibility",edge:"end",onClick:()=>t(n),children:$(y1,{icon:"ion:search-outline",width:25,height:"25",color:_e.colors.black})})})})})},v1=({checked:e,onClick:t})=>$("div",{children:$(Y$,{checked:e,onClick:t,color:"primary"})});v1.propTypes={checked:Je.bool.isRequired,onClick:Je.any.isRequired};const r3=Ie(ko)(()=>We`
+  `),n3=()=>{const{value:e,setValue:t}=Dv(),[n,r]=w.useState("");return $(e3,{children:$(t3,{value:n,onChange:o=>r(o.target.value),placeholder:"Pesquisar",type:"text",onKeyDown:o=>o.key==="Enter"?t(n):null,endAdornment:$(GP,{position:"end",children:$(sT,{"aria-label":"toggle password visibility",edge:"end",onClick:()=>t(n),children:$(y1,{icon:"ion:search-outline",width:25,height:"25",color:_e.colors.black})})})})})},v1=({checked:e,onClick:t})=>$("div",{children:$(Y$,{checked:e,onClick:t,color:"primary"})});v1.propTypes={checked:Je.bool.isRequired,onClick:Je.any.isRequired};const r3=Ie(ko)(()=>We`
     background-image: url('https://polibrassoftware.com.br/wp-content/uploads/2020/08/imagem-celular-app-polibras-2.jpg');
     background-repeat: no-repeat;
     height: 40rem;
