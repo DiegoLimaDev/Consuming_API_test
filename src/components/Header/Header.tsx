@@ -11,20 +11,18 @@ export const Header = () => {
 
   return (
     <Container>
-      <Stack direction="row" justifyContent="space-between" alignItems="center">
-        <Stack direction="column">
-          <Text size="title" darkmode="dark" margin="0 0 0 2rem">
-            Polibras Software
-          </Text>
-          <Text size="medium2" darkmode="dark" margin="0 0 0 2rem">
-            Teste Técnico
-          </Text>
-          <Text size="medium2" darkmode="dark" margin="0 0 0 2rem">
-            Estágio frontend
-          </Text>
-        </Stack>
+      <Stack direction="column">
+        <Text size="title" darkmode="dark" margin="0 0 0 2rem">
+          Polibras Software
+        </Text>
+        <Text size="medium2" darkmode="dark" margin="1rem 0 1rem 2rem">
+          Teste Técnico
+        </Text>
+        <Text size="medium2" darkmode="dark" margin="1rem 0 3rem 2rem">
+          Estágio frontend
+        </Text>
         <Stack direction="row">
-          <Text size="big" darkmode="dark">
+          <Text size="big" darkmode="dark" margin="0 0 0 2rem">
             Modo Escuro
           </Text>
           <MySwitch

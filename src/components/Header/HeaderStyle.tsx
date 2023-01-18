@@ -7,14 +7,15 @@ export const Container = styled(Box)(
     background-repeat: no-repeat;
     height: 40rem;
     background-position-y: 40%;
-    padding: 2rem;
+    padding: 3rem;
+    position: relative;
   `,
 );
 
 export const SearchContainer = styled(Box)(
   () => css`
-    position: absolute;
-    top: 35%;
     margin-left: 2rem;
+    position: absolute;
+    bottom: 2rem;
   `,
 );
