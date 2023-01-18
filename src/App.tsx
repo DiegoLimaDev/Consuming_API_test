@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { BackgroundColor } from './components/BackgroundColor/BackgroundColor';
 import { Loader } from './components/Loader/Loader';
 import { ProductsMap } from './components/ProductsMap/ProductsMap';
-import { Text } from './components/Text/Text';
 import { GlobalStyle } from './globalStyles';
 import { useIsDarkMode } from './utils/GlobalContext';
 
@@ -28,14 +27,7 @@ export const App = () => {
     <BackgroundColor darkmode={isDarkMode}>
       <GlobalStyle />
       {isLoading ? <Loader visible={isLoading} /> : null}
-      {myData?.map((e: any) => (
-        <div key={e.id}>
-          <Text size="medium" darkmode={isDarkMode}>
-            {e.price}
-          </Text>
-          <ProductsMap data={myData} />
-        </div>
-      ))}
+      <ProductsMap data={myData} />
     </BackgroundColor>
   );
 };
