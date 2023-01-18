@@ -4,6 +4,6 @@ import { theme } from '../../utils/theme';
 
 export const MyButton = styled(Button)(
   () => css`
-    font-size: ${theme.sizes.medium};
+    font-size: ${theme.sizes.small};
   `,
 );
