@@ -47,7 +47,7 @@ export const CustomDrawer = ({
               isDarkMode === 'light'
                 ? theme.colors.iceWhite
                 : theme.colors.black,
-            padding: '2rem',
+            padding: '3rem',
           },
         }}
       >
@@ -79,7 +79,7 @@ export const CustomDrawer = ({
         <Text size="big" darkmode={isDarkMode} align="center" margin="2rem 0">
           {`R$${filteredById?.price}`}
         </Text>
-        <Text size="medium2" darkmode={isDarkMode} align="center">
+        <Text size="medium" darkmode={isDarkMode} align="center">
           {filteredById?.description}
         </Text>
       </MyDrawer>

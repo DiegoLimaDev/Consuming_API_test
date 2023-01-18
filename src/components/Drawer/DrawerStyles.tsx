@@ -5,11 +5,7 @@ import { theme } from '../../utils/theme';
 
 export const Container = styled(Box)(() => css``);
 
-export const MyDrawer = styled(Drawer)(
-  () => css`
-    margin: 5rem;
-  `,
-);
+export const MyDrawer = styled(Drawer)(() => css``);
 
 export const CustomImage = styled.img`
   display: block;
