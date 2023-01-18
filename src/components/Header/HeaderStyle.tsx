@@ -11,11 +11,10 @@ export const Container = styled(Box)(
   `,
 );
 
-export const Row = styled(Box)(
-  ({ justify }: { justify?: string }) => css`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: ${justify};
+export const SearchContainer = styled(Box)(
+  () => css`
+    position: absolute;
+    top: 35%;
+    margin-left: 2rem;
   `,
 );
