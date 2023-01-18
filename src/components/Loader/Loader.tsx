@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { ThreeDots } from 'react-loader-spinner';
 import { Container, TailSpinStyle } from './LoaderStyles';
 import P from 'prop-types';
