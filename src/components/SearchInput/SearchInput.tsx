@@ -16,6 +16,7 @@ export const SearchInput = () => {
         onChange={(e) => setString(e.target.value)}
         placeholder="Pesquisar"
         type="text"
+        onKeyDown={(e) => (e.key === 'Enter' ? setValue(string) : null)}
         endAdornment={
           <InputAdornment position="end">
             <IconButton
