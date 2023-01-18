@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Grid, Paper, Rating } from '@mui/material';
+import { Grid, Paper } from '@mui/material';
 import { Box, css } from '@mui/system';
 import { theme } from '../../utils/theme';
 
@@ -17,7 +17,8 @@ export const Item = styled(Paper)(
     padding: 2rem;
     text-align: 'center';
     color: ${theme.colors.black};
-    height: 35rem;
+    height: 40rem;
+    width: fit-content;
   `,
 );
 
@@ -28,7 +29,6 @@ export const MyGrid = styled(Grid)(
     background-color: ${darkmode === 'dark'
       ? theme.colors.black
       : theme.colors.iceWhite};
-    width: fit-content;
   `,
 );
 
@@ -39,6 +39,7 @@ export const CustomImage = styled.img`
 
 export const ButtonContainer = styled(Box)(
   () => css`
-    margin-top: 2rem;
+    display: block;
+    margin: 0 auto;
   `,
 );
