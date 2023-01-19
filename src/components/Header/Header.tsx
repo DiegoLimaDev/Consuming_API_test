@@ -2,6 +2,7 @@ import { Stack } from '@mui/system';
 import React from 'react';
 import { useIsDarkMode } from '../../utils/GlobalContext';
 import { SearchInput } from '../SearchInput/SearchInput';
+import { SelectCategory } from '../SelectCategory/SelectCategory';
 import { MySwitch } from '../Switch/Switch';
 import { Text } from '../Text/Text';
 import { Container, SearchContainer } from './HeaderStyle';
@@ -34,6 +35,7 @@ export const Header = () => {
         </Stack>
       </Stack>
       <SearchContainer>
+        <SelectCategory margin="2rem auto" />
         <SearchInput />
       </SearchContainer>
     </Container>
