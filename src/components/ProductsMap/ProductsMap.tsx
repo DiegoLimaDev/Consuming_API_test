@@ -10,16 +10,15 @@ import {
 } from '../../utils/GlobalContext';
 import { Text } from '../Text/Text';
 import {
-  ButtonContainer,
   Container,
-  CustomImage,
-  Item,
-  MyGrid,
+  CustomSeparator,
+  MyCustomStack,
   NotFoundContainer,
+  SearchContainer,
 } from './ProductsMapsStyle';
-import { Grid, Stack } from '@mui/material';
-import { CustomDrawer } from '../Drawer/Drawer';
-import { Button } from '../Button/Button';
+import { GridComponent } from '../GridComponent/GridComponent';
+import { SelectCategory } from '../SelectCategory/SelectCategory';
+import { SearchInput } from '../SearchInput/SearchInput';
 
 export const ProductsMap = ({ data }: { data: dataShape[] }) => {
   const { value, setValue } = useSearchValue();
@@ -29,7 +28,7 @@ export const ProductsMap = ({ data }: { data: dataShape[] }) => {
   const { category, setCategory } = useCategory();
 
   const filteredData =
-    category === ''
+    category === 'All'
       ? data.filter((e) => e.title.toLowerCase().includes(value.toLowerCase()))
       : data
           .filter((e) => e.category.toLowerCase() === category.toLowerCase())
@@ -41,52 +40,25 @@ export const ProductsMap = ({ data }: { data: dataShape[] }) => {
         isDrawerVisible ? setIsDrawerVisible(!isDrawerVisible) : null
       }
     >
+      <SearchContainer>
+        <MyCustomStack
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+        >
+          <SelectCategory />
+          <CustomSeparator />
+          <SearchInput />
+        </MyCustomStack>
+      </SearchContainer>
       {filteredData.length === 0 ? (
         <NotFoundContainer>
-          <Text size="title" darkmode={isDarkMode}>
-            Dados não encontrados
+          <Text size="big" darkmode={isDarkMode}>
+            Não há correspondências para sua busca
           </Text>
         </NotFoundContainer>
       ) : (
-        <Grid container rowSpacing={1} columnSpacing={5}>
-          {filteredData.map((e) => (
-            <MyGrid item xs={4} md={2} key={e.id} darkmode={isDarkMode}>
-              <Item>
-                <CustomImage src={e.image} height="200" width="200" />
-                <Text
-                  size="medium2"
-                  darkmode="light"
-                  align="center"
-                  margin="2rem 0 0 0"
-                >
-                  {`${e.title.substring(0, 30)}...  `}
-                </Text>
-                <Text size="medium2" darkmode="light" align="center">
-                  {`R$${e.price}`}
-                </Text>
-                <Stack
-                  direction="row"
-                  sx={{
-                    position: 'absolute',
-                    bottom: '7rem',
-                  }}
-                >
-                  <ButtonContainer>
-                    <Button
-                      onClick={() => {
-                        setIsDrawerVisible(!isDrawerVisible);
-                        setNumberId(e.id);
-                      }}
-                    >
-                      Ver informações
-                    </Button>
-                  </ButtonContainer>
-                </Stack>
-              </Item>
-            </MyGrid>
-          ))}
-          <CustomDrawer visible={isDrawerVisible} data={data} />
-        </Grid>
+        <GridComponent data={filteredData} />
       )}
     </Container>
   );

@@ -1,48 +1,58 @@
 import styled from '@emotion/styled';
-import { Grid, Paper } from '@mui/material';
+import { Stack } from '@mui/material';
 import { Box, css } from '@mui/system';
 import { theme } from '../../utils/theme';
 
-export const Container = styled(Box)(() => css``);
+export const Container = styled(Box)(
+  () => css`
+    display: block;
+    margin: 0 auto;
+  `,
+);
 
 export const NotFoundContainer = styled(Box)(
   () => css`
     display: block;
-    margin: 10rem auto;
+    margin: 10rem auto 0 auto;
     width: fit-content;
-    min-height: 30rem;
+    min-height: 40rem;
+
+    @media (max-width: 600px) {
+      width: 80%;
+      text-align: center;
+    }
   `,
 );
 
-export const Item = styled(Paper)(
+export const SearchContainer = styled(Box)(
   () => css`
     padding: 2rem;
-    text-align: 'center';
-    color: ${theme.colors.black};
-    height: 40rem;
-    width: fit-content;
-  `,
-);
-
-export const MyGrid = styled(Grid)(
-  ({ darkmode }: { darkmode: string }) => css`
-    margin: 5rem 2rem 0 4rem;
-    min-height: 50rem;
-    background-color: ${darkmode === 'dark'
-      ? theme.colors.black
-      : theme.colors.iceWhite};
-    position: relative;
-  `,
-);
-
-export const CustomImage = styled.img`
-  display: block;
-  margin: 0 auto;
-`;
-
-export const ButtonContainer = styled(Box)(
-  () => css`
-    display: block;
     margin-left: 2rem;
+
+    @media (max-width: 600px) {
+      margin-left: 4rem;
+    }
+  `,
+);
+
+export const MyCustomStack = styled(Stack)(
+  () => css`
+    width: 30%;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  `,
+);
+
+export const CustomSeparator = styled(Box)(
+  () => css`
+    width: 0;
+    height: 0;
+
+    @media (max-width: 600px) {
+      height: 2rem;
+    }
   `,
 );
