@@ -1,6 +1,6 @@
 import React from 'react';
 import { useIsDarkMode } from '../../utils/GlobalContext';
-import { Container, IconContainer, Row } from './FooterStyle';
+import { Container, CustomStack, IconContainer } from './FooterStyle';
 import { Icon } from '@iconify/react';
 import { theme } from '../../utils/theme';
 import { Link } from '@mui/material';
@@ -24,11 +24,11 @@ export const Footer = () => {
   const { isDarkMode, setIsDarkMode } = useIsDarkMode();
   return (
     <Container darkmode={isDarkMode}>
-      <Row justify="space-between">
+      <CustomStack justify="space-between">
         <Text darkmode={isDarkMode === 'light' ? 'dark' : 'light'} size="big">
           Diego Lima da Silva &copy;
         </Text>
-        <Row justify="space-around">
+        <CustomStack justify="space-around" icons="true">
           {icons.map((e, i) => (
             <IconContainer key={i}>
               <Link href={links[i]} target="_blank">
@@ -45,8 +45,8 @@ export const Footer = () => {
               </Link>
             </IconContainer>
           ))}
-        </Row>
-      </Row>
+        </CustomStack>
+      </CustomStack>
     </Container>
   );
 };

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Box, css } from '@mui/material';
+import { Box, css, Stack } from '@mui/material';
 import { theme } from '../../utils/theme';
 
 export const Container = styled(Box)(
@@ -10,6 +10,10 @@ export const Container = styled(Box)(
     background-color: ${darkmode === 'dark'
       ? theme.colors.iceWhite
       : theme.colors.black};
+
+    @media (max-width: 600px) {
+      height: fit-content;
+    }
   `,
 );
 
@@ -26,11 +30,16 @@ export const IconContainer = styled(Box)(
   `,
 );
 
-export const Row = styled(Box)(
-  ({ justify }: { justify: string }) => css`
+export const CustomStack = styled(Stack)(
+  ({ justify, icons }: { justify: string; icons?: string }) => css`
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: ${justify};
+
+    @media (max-width: 600px) {
+      flex-direction: ${icons === 'true' ? 'row' : 'column'};
+      justify-content: center;
+    }
   `,
 );
