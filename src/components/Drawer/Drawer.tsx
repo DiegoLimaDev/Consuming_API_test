@@ -43,7 +43,12 @@ export const CustomDrawer = ({
           },
         }}
       >
-        <CustomImage src={filteredById?.image} height={250} width={250} />
+        <CustomImage
+          src={filteredById?.image}
+          height={250}
+          width={250}
+          alt={filteredById?.title}
+        />
         <Text size="medium2" darkmode={isDarkMode} align="center">
           {filteredById?.title}
         </Text>
