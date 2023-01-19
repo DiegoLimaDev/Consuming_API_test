@@ -6,6 +6,7 @@ import {
   useIsDarkMode,
   useIsDrawerVisible,
   useNumberId,
+  useOrderBy,
   useSearchValue,
 } from '../../utils/GlobalContext';
 import { Text } from '../Text/Text';
@@ -19,6 +20,8 @@ import {
 import { GridComponent } from '../GridComponent/GridComponent';
 import { SelectCategory } from '../SelectCategory/SelectCategory';
 import { SearchInput } from '../SearchInput/SearchInput';
+import { SelectOrder } from '../SelectOrder/SelectOrder';
+import { filterService } from '../../services/filter';
 
 export const ProductsMap = ({ data }: { data: dataShape[] }) => {
   const { value, setValue } = useSearchValue();
@@ -26,13 +29,9 @@ export const ProductsMap = ({ data }: { data: dataShape[] }) => {
   const { isDrawerVisible, setIsDrawerVisible } = useIsDrawerVisible();
   const { numberId, setNumberId } = useNumberId();
   const { category, setCategory } = useCategory();
+  const { orderBy, setOrderBy } = useOrderBy();
 
-  const filteredData =
-    category === 'All'
-      ? data.filter((e) => e.title.toLowerCase().includes(value.toLowerCase()))
-      : data
-          .filter((e) => e.category.toLowerCase() === category.toLowerCase())
-          .filter((e) => e.title.toLowerCase().includes(value.toLowerCase()));
+  const filteredData = filterService(data, orderBy, category, value);
 
   return (
     <Container
@@ -49,6 +48,8 @@ export const ProductsMap = ({ data }: { data: dataShape[] }) => {
           <SelectCategory />
           <CustomSeparator />
           <SearchInput />
+          <CustomSeparator />
+          <SelectOrder />
         </MyCustomStack>
       </SearchContainer>
       {filteredData.length === 0 ? (

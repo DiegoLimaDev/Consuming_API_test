@@ -39,7 +39,7 @@ export const MyCustomStack = styled(Stack)(
   () => css`
     width: fit-content;
 
-    @media (max-width: 600px) {
+    @media (max-width: 900px) {
       flex-direction: column;
       align-items: flex-start;
     }
@@ -51,7 +51,7 @@ export const CustomSeparator = styled(Box)(
     width: 2rem;
     height: 0;
 
-    @media (max-width: 600px) {
+    @media (max-width: 900px) {
       height: 2rem;
     }
   `,
