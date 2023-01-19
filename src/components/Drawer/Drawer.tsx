@@ -8,11 +8,7 @@ import {
 } from './DrawerStyles';
 import P from 'prop-types';
 import { Text } from '../Text/Text';
-import {
-  useIsDarkMode,
-  useIsDrawerVisible,
-  useNumberId,
-} from '../../utils/GlobalContext';
+import { useIsDarkMode, useNumberId } from '../../utils/GlobalContext';
 import { dataShape } from '../../services/interface';
 import { theme } from '../../utils/theme';
 import { Stack } from '@mui/system';
@@ -24,21 +20,17 @@ export const CustomDrawer = ({
   visible: boolean;
   data: dataShape[];
 }) => {
-  const { isDrawerVisible, setIsDrawerVisible } = useIsDrawerVisible();
   const { numberId, setNumberId } = useNumberId();
   const { isDarkMode, setIsDarkMode } = useIsDarkMode();
 
   const filteredById = data.find((e) => e.id === numberId);
 
   return (
-    <Container
-      role="presentation"
-      onClick={() => setIsDrawerVisible(!isDrawerVisible)}
-    >
+    <Container role="presentation">
       <MyDrawer
         anchor="right"
         open={visible}
-        elevation={10}
+        elevation={20}
         transitionDuration={200}
         PaperProps={{
           style: {
@@ -51,7 +43,7 @@ export const CustomDrawer = ({
           },
         }}
       >
-        <CustomImage src={filteredById?.image} height={300} width={300} />
+        <CustomImage src={filteredById?.image} height={250} width={250} />
         <Text size="medium2" darkmode={isDarkMode} align="center">
           {filteredById?.title}
         </Text>
