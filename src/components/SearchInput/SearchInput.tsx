@@ -7,7 +7,6 @@ import { Container, CustomInput } from './SearchInputStyle';
 
 export const SearchInput = () => {
   const { value, setValue } = useSearchValue();
-  // const [string, setString] = useState('');
 
   return (
     <Container>
@@ -16,7 +15,6 @@ export const SearchInput = () => {
         onChange={(e) => setValue(e.target.value)}
         placeholder="Pesquisar"
         type="text"
-        // onKeyDown={(e) => (e.key === 'Enter' ? setValue(string) : null)}
         endAdornment={
           <InputAdornment position="end">
             <IconButton aria-label="toggle password visibility" edge="end">
