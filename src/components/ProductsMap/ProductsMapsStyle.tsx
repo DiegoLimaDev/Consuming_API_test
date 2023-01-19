@@ -37,7 +37,7 @@ export const SearchContainer = styled(Box)(
 
 export const MyCustomStack = styled(Stack)(
   () => css`
-    width: 30%;
+    width: fit-content;
 
     @media (max-width: 600px) {
       flex-direction: column;
@@ -48,7 +48,7 @@ export const MyCustomStack = styled(Stack)(
 
 export const CustomSeparator = styled(Box)(
   () => css`
-    width: 0;
+    width: 2rem;
     height: 0;
 
     @media (max-width: 600px) {
