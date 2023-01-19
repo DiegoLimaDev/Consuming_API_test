@@ -3,6 +3,8 @@ import { Grid, Paper } from '@mui/material';
 import { Box, css } from '@mui/system';
 import { theme } from '../../utils/theme';
 
+export const Container = styled(Box)(() => css``);
+
 export const NotFoundContainer = styled(Box)(
   () => css`
     display: block;

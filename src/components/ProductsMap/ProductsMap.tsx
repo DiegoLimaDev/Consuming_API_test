@@ -2,6 +2,7 @@ import React from 'react';
 import { dataShape } from '../../services/interface';
 import P from 'prop-types';
 import {
+  useCategory,
   useIsDarkMode,
   useIsDrawerVisible,
   useNumberId,
@@ -10,6 +11,7 @@ import {
 import { Text } from '../Text/Text';
 import {
   ButtonContainer,
+  Container,
   CustomImage,
   Item,
   MyGrid,
@@ -24,13 +26,18 @@ export const ProductsMap = ({ data }: { data: dataShape[] }) => {
   const { isDarkMode, setIsDarkMode } = useIsDarkMode();
   const { isDrawerVisible, setIsDrawerVisible } = useIsDrawerVisible();
   const { numberId, setNumberId } = useNumberId();
+  const { category, setCategory } = useCategory();
 
-  const filteredData = data.filter((e) =>
-    e.title.toLowerCase().includes(value.toLowerCase()),
-  );
+  const filteredData = data
+    .filter((e) => e.category.toLowerCase().includes(category.toLowerCase()))
+    .filter((e) => e.title.toLowerCase().includes(value.toLowerCase()));
 
   return (
-    <>
+    <Container
+      onClick={() =>
+        isDrawerVisible ? setIsDrawerVisible(!isDrawerVisible) : null
+      }
+    >
       {filteredData.length === 0 ? (
         <NotFoundContainer>
           <Text size="title" darkmode={isDarkMode}>
@@ -72,7 +79,7 @@ export const ProductsMap = ({ data }: { data: dataShape[] }) => {
           <CustomDrawer visible={isDrawerVisible} data={data} />
         </Grid>
       )}
-    </>
+    </Container>
   );
 };
 
