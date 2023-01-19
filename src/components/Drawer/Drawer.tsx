@@ -34,7 +34,7 @@ export const CustomDrawer = ({
         transitionDuration={200}
         PaperProps={{
           style: {
-            width: '30%',
+            width: '25rem',
             backgroundColor:
               isDarkMode === 'light'
                 ? theme.colors.iceWhite
