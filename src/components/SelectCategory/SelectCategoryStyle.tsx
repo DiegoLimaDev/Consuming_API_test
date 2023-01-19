@@ -13,7 +13,9 @@ export const Container = styled(Box)(
 export const MySelect = styled(Select)(
   () => css`
     background-color: ${theme.colors.mediumWhite};
-    font-size: ${theme.sizes.small};
+    font-size: ${theme.sizes.medium};
+    height: 5rem;
+    min-width: 10rem;
   `,
 );
 
