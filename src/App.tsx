@@ -27,7 +27,7 @@ export const App = () => {
     <BackgroundColor darkmode={isDarkMode}>
       <GlobalStyle />
       {isLoading ? <Loader visible={isLoading} /> : null}
-      <ProductsMap data={myData} />
+      {!isLoading ? <ProductsMap data={myData} /> : null}
     </BackgroundColor>
   );
 };
