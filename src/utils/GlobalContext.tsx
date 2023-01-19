@@ -21,7 +21,7 @@ export const GlobalContext = ({ children }: { children: any }) => {
   const [value, setValue] = useState('');
   const [isDrawerVisible, setIsDrawerVisible] = useState(false);
   const [numberId, setNumberId] = useState();
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useState('All');
 
   return (
     <MyContext.Provider
