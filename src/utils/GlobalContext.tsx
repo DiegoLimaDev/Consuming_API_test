@@ -12,6 +12,8 @@ type MyContextTypes = {
   setNumberId: React.Dispatch<React.SetStateAction<any>>;
   category: any;
   setCategory: React.Dispatch<React.SetStateAction<any>>;
+  orderBy: any;
+  setOrderBy: React.Dispatch<React.SetStateAction<any>>;
 };
 
 export const MyContext = createContext<MyContextTypes>({} as MyContextTypes);
@@ -22,6 +24,7 @@ export const GlobalContext = ({ children }: { children: any }) => {
   const [isDrawerVisible, setIsDrawerVisible] = useState(false);
   const [numberId, setNumberId] = useState();
   const [category, setCategory] = useState('All');
+  const [orderBy, setOrderBy] = useState('initial');
 
   return (
     <MyContext.Provider
@@ -36,6 +39,8 @@ export const GlobalContext = ({ children }: { children: any }) => {
         setNumberId,
         category,
         setCategory,
+        orderBy,
+        setOrderBy,
       }}
     >
       {children}
@@ -56,3 +61,5 @@ export const useIsDrawerVisible = () => React.useContext(MyContext);
 export const useNumberId = () => React.useContext(MyContext);
 
 export const useCategory = () => React.useContext(MyContext);
+
+export const useOrderBy = () => React.useContext(MyContext);
