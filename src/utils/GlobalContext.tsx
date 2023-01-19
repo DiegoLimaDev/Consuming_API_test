@@ -10,6 +10,8 @@ type MyContextTypes = {
   setIsDrawerVisible: React.Dispatch<React.SetStateAction<boolean>>;
   numberId: any;
   setNumberId: React.Dispatch<React.SetStateAction<any>>;
+  category: any;
+  setCategory: React.Dispatch<React.SetStateAction<any>>;
 };
 
 export const MyContext = createContext<MyContextTypes>({} as MyContextTypes);
@@ -19,6 +21,7 @@ export const GlobalContext = ({ children }: { children: any }) => {
   const [value, setValue] = useState('');
   const [isDrawerVisible, setIsDrawerVisible] = useState(false);
   const [numberId, setNumberId] = useState();
+  const [category, setCategory] = useState('');
 
   return (
     <MyContext.Provider
@@ -31,6 +34,8 @@ export const GlobalContext = ({ children }: { children: any }) => {
         setIsDrawerVisible,
         numberId,
         setNumberId,
+        category,
+        setCategory,
       }}
     >
       {children}
@@ -49,3 +54,5 @@ export const useSearchValue = () => React.useContext(MyContext);
 export const useIsDrawerVisible = () => React.useContext(MyContext);
 
 export const useNumberId = () => React.useContext(MyContext);
+
+export const useCategory = () => React.useContext(MyContext);
