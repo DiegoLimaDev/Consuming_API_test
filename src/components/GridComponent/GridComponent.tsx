@@ -29,6 +29,7 @@ export const GridComponent = ({ data }: { data: dataShape[] }) => {
       columnSpacing={5}
       spacing={{ xs: 'auto', md: 'auto' }}
       columns={{ xs: 2, sm: 8, md: 12 }}
+      sx={{ width: 'fit-content', margin: '5rem auto' }}
     >
       {data.map((e) => (
         <MyGrid item xs={2} sm={3} md={2.5} key={e.id} darkmode={isDarkMode}>
