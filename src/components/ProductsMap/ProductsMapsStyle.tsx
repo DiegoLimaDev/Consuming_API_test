@@ -31,6 +31,7 @@ export const MyGrid = styled(Grid)(
     background-color: ${darkmode === 'dark'
       ? theme.colors.black
       : theme.colors.iceWhite};
+    position: relative;
   `,
 );
 
@@ -42,6 +43,6 @@ export const CustomImage = styled.img`
 export const ButtonContainer = styled(Box)(
   () => css`
     display: block;
-    margin: 0 auto;
+    margin-left: 2rem;
   `,
 );

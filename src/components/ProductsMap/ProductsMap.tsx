@@ -28,9 +28,12 @@ export const ProductsMap = ({ data }: { data: dataShape[] }) => {
   const { numberId, setNumberId } = useNumberId();
   const { category, setCategory } = useCategory();
 
-  const filteredData = data
-    .filter((e) => e.category.toLowerCase().includes(category.toLowerCase()))
-    .filter((e) => e.title.toLowerCase().includes(value.toLowerCase()));
+  const filteredData =
+    category === ''
+      ? data.filter((e) => e.title.toLowerCase().includes(value.toLowerCase()))
+      : data
+          .filter((e) => e.category.toLowerCase() === category.toLowerCase())
+          .filter((e) => e.title.toLowerCase().includes(value.toLowerCase()));
 
   return (
     <Container
@@ -61,7 +64,13 @@ export const ProductsMap = ({ data }: { data: dataShape[] }) => {
                 <Text size="medium2" darkmode="light" align="center">
                   {`R$${e.price}`}
                 </Text>
-                <Stack direction="row">
+                <Stack
+                  direction="row"
+                  sx={{
+                    position: 'absolute',
+                    bottom: '7rem',
+                  }}
+                >
                   <ButtonContainer>
                     <Button
                       onClick={() => {
