@@ -73,7 +73,7 @@ export const CustomDrawer = ({
             sx={{ fontSize: '10rem' }}
           />
         </RatingContainer>
-        <Text size="big" darkmode={isDarkMode} align="center" margin="2rem 0">
+        <Text size="big" darkmode={isDarkMode} align="center" margin="1rem 0">
           {`R$${filteredById?.price}`}
         </Text>
         <Text size="medium" darkmode={isDarkMode} align="center">

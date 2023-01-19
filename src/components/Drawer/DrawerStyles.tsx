@@ -3,13 +3,17 @@ import { Drawer, Rating } from '@mui/material';
 import { Box, css } from '@mui/system';
 import { theme } from '../../utils/theme';
 
-export const Container = styled(Box)(() => css``);
+export const Container = styled(Box)(
+  () => css`
+    padding: 2rem;
+  `,
+);
 
 export const MyDrawer = styled(Drawer)(() => css``);
 
 export const CustomImage = styled.img`
   display: block;
-  margin: 2rem auto;
+  margin: 1rem auto;
   cursor: zoom-in;
   transition: all 200ms ease-in-out;
 
@@ -20,13 +24,13 @@ export const CustomImage = styled.img`
 
 export const CustomRating = styled(Rating)(
   () => css`
-    font-size: 10rem;
+    font-size: 6.5rem;
   `,
 );
 
 export const RatingContainer = styled(Box)(
   () => css`
     display: block;
-    margin: 2rem auto;
+    margin: 1rem auto;
   `,
 );
