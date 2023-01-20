@@ -370,6 +370,7 @@ Error generating stack: `+i.message+`
     padding: 2rem;
   `);const C5=ke(Zt)(({darkmode:e})=>Me`
     background-color: ${e==="light"?$e.colors.iceWhite:$e.colors.black};
+    height: fit-content;
   `),k5=ke.img`
   display: block;
   margin: 1rem auto;
