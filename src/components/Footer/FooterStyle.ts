@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Box, css, Stack } from '@mui/material';
-import { theme } from '../../utils/theme';
+import { theme } from '../../styles/theme';
 
 export const Container = styled(Box)(
   ({ darkmode }: { darkmode: string }) => css`
