@@ -1,6 +1,7 @@
 import { Switch } from '@mui/material';
 import React from 'react';
 import P from 'prop-types';
+import { Container } from './SwitchStyle';
 
 export const MySwitch = ({
   checked,
@@ -10,9 +11,9 @@ export const MySwitch = ({
   onClick: any;
 }) => {
   return (
-    <div>
+    <Container>
       <Switch checked={checked} onClick={onClick} color="primary" />
-    </div>
+    </Container>
   );
 };
 
