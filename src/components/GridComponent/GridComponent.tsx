@@ -16,6 +16,7 @@ import {
   useIsDrawerVisible,
   useNumberId,
 } from '../../utils/GlobalContext';
+import { getDecimals } from '../../services/getDecimalsNumbers';
 
 export const GridComponent = ({ data }: { data: dataShape[] }) => {
   const { isDarkMode, setIsDarkMode } = useIsDarkMode();
@@ -44,7 +45,7 @@ export const GridComponent = ({ data }: { data: dataShape[] }) => {
               {`${e.title.substring(0, 30)}...  `}
             </Text>
             <Text size="medium2" darkmode={isDarkMode} align="center">
-              {`R$${e.price}`}
+              {`R$${getDecimals(e.price)}`}
             </Text>
             <Stack
               direction="row"

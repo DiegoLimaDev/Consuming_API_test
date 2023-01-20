@@ -18,7 +18,7 @@ export const Item = styled(Paper)(
     padding: 2rem;
     text-align: 'center';
     color: ${theme.colors.black};
-    height: 40rem;
+    height: 45rem;
     background-color: ${darkmode === 'dark'
       ? theme.colors.black
       : theme.colors.iceWhite};

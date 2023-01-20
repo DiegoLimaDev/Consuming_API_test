@@ -1,8 +1,17 @@
-import { Container } from '@mui/material';
+import {
+  Container,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Slide,
+} from '@mui/material';
 import React from 'react';
 import {
   CustomImage,
   CustomRating,
+  DialogBox,
   MyDrawer,
   RatingContainer,
 } from './DrawerStyles';
@@ -10,8 +19,19 @@ import P from 'prop-types';
 import { Text } from '../Text/Text';
 import { useIsDarkMode, useNumberId } from '../../utils/GlobalContext';
 import { dataShape } from '../../services/interface';
-import { theme } from '../../utils/theme';
 import { Stack } from '@mui/system';
+import { getDecimals } from '../../services/getDecimalsNumbers';
+import { TransitionProps } from '@mui/material/transitions';
+import { Button } from '../Button/Button';
+
+const Transition = React.forwardRef(function Transition(
+  props: TransitionProps & {
+    children: React.ReactElement<any, any>;
+  },
+  ref: React.Ref<unknown>,
+) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 export const CustomDrawer = ({
   visible,
@@ -27,7 +47,7 @@ export const CustomDrawer = ({
 
   return (
     <Container role="presentation">
-      <MyDrawer
+      {/* <MyDrawer
         anchor="right"
         open={visible}
         elevation={20}
@@ -74,12 +94,76 @@ export const CustomDrawer = ({
           />
         </RatingContainer>
         <Text size="big" darkmode={isDarkMode} align="center" margin="1rem 0">
-          {`R$${filteredById?.price}`}
+          {`R$${getDecimals(Number(filteredById?.price))}`}
         </Text>
         <Text size="medium" darkmode={isDarkMode} align="center">
           {filteredById?.description}
         </Text>
-      </MyDrawer>
+      </MyDrawer> */}
+      <Dialog
+        open={visible}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={() => !visible}
+      >
+        <DialogBox darkmode={isDarkMode}>
+          <DialogTitle>
+            <Text size="big" darkmode={isDarkMode}>
+              {filteredById?.title}
+            </Text>
+          </DialogTitle>
+          <DialogContent>
+            <CustomImage
+              src={filteredById?.image}
+              height={250}
+              width={250}
+              alt={filteredById?.title}
+            />
+            <Text size="medium2" darkmode={isDarkMode} align="center">
+              {filteredById?.title}
+            </Text>
+            <Stack
+              direction="row"
+              justifyContent="space-around"
+              alignItems="center"
+            >
+              <Text size="medium" darkmode={isDarkMode} align="right">
+                {`Categoria: ${filteredById?.category}`}
+              </Text>
+              <Text
+                size="medium"
+                darkmode={isDarkMode}
+                align="left"
+              >{`Estoque: ${filteredById?.rating.count}`}</Text>
+            </Stack>
+            <RatingContainer>
+              <CustomRating
+                readOnly
+                value={Number(filteredById?.rating.rate)}
+                sx={{ fontSize: '10rem' }}
+              />
+            </RatingContainer>
+            <Text
+              size="big"
+              darkmode={isDarkMode}
+              align="center"
+              margin="1rem 0"
+            >
+              {`R$${getDecimals(Number(filteredById?.price))}`}
+            </Text>
+            <Text size="medium" darkmode={isDarkMode} align="center">
+              {filteredById?.description}
+            </Text>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={() => !visible}>
+              <Text size="medium2" darkmode={isDarkMode}>
+                Fechar
+              </Text>
+            </Button>
+          </DialogActions>
+        </DialogBox>
+      </Dialog>
     </Container>
   );
 };

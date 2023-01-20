@@ -11,6 +11,14 @@ export const Container = styled(Box)(
 
 export const MyDrawer = styled(Drawer)(() => css``);
 
+export const DialogBox = styled(Box)(
+  ({ darkmode }: { darkmode: string }) => css`
+    background-color: ${darkmode === 'light'
+      ? theme.colors.iceWhite
+      : theme.colors.black};
+  `,
+);
+
 export const CustomImage = styled.img`
   display: block;
   margin: 1rem auto;
@@ -31,6 +39,7 @@ export const CustomRating = styled(Rating)(
 export const RatingContainer = styled(Box)(
   () => css`
     display: block;
-    margin: 1rem auto;
+    margin: 0rem auto;
+    width: fit-content;
   `,
 );
