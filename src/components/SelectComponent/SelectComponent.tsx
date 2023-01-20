@@ -9,6 +9,8 @@ import {
   MySelect,
 } from './SelectComponentStyle';
 import { Text } from '../Text/Text';
+import { FormControl } from '@mui/material';
+import { theme } from '../../styles/theme';
 
 export const SelectComponent = ({
   margin,
@@ -34,7 +36,7 @@ export const SelectComponent = ({
           </Text>
         </CustomInputLabel>
         <MySelect
-          label="Categoria"
+          notched
           value={value}
           onChange={(e) => setValue(e.target.value)}
         >
