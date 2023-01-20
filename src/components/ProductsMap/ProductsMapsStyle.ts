@@ -30,7 +30,8 @@ export const SearchContainer = styled(Box)(
     margin-left: 2rem;
 
     @media (max-width: 600px) {
-      margin-left: 4rem;
+      display: block;
+      margin: 0 auto;
     }
   `,
 );
