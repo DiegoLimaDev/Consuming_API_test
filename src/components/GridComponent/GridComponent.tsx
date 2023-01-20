@@ -1,6 +1,6 @@
 import { Grid, Stack } from '@mui/material';
 import React from 'react';
-import { dataShape } from '../../services/interface';
+import { dataShape } from '../../utils/interface';
 import P from 'prop-types';
 import {
   ButtonContainer,
@@ -16,7 +16,7 @@ import {
   useIsDrawerVisible,
   useNumberId,
 } from '../../utils/GlobalContext';
-import { getDecimals } from '../../services/getDecimalsNumbers';
+import { getDecimals } from '../../utils/getDecimalsNumbers';
 
 export const GridComponent = ({ data }: { data: dataShape[] }) => {
   const { isDarkMode, setIsDarkMode } = useIsDarkMode();
@@ -30,7 +30,7 @@ export const GridComponent = ({ data }: { data: dataShape[] }) => {
       columnSpacing={5}
       spacing={{ xs: 'auto', md: 'auto' }}
       columns={{ xs: 2, sm: 8, md: 12 }}
-      sx={{ width: 'fit-content', margin: '0 5rem' }}
+      sx={{ width: 'fit-content', margin: '0 5rem 5rem 0' }}
     >
       {data.map((e) => (
         <MyGrid item xs={2} sm={3} md={2.5} key={e.id} darkmode={isDarkMode}>
@@ -70,7 +70,7 @@ export const GridComponent = ({ data }: { data: dataShape[] }) => {
           </Item>
         </MyGrid>
       ))}
-      <CustomDrawer visible={isDrawerVisible} data={data} />
+      <CustomDrawer data={data} />
     </Grid>
   );
 };

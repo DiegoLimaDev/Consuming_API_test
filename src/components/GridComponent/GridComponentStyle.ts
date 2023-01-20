@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Box, css, Grid, Paper } from '@mui/material';
-import { theme } from '../../utils/theme';
+import { theme } from '../../styles/theme';
 
 export const MyGrid = styled(Grid)(
   ({ darkmode }: { darkmode: string }) => css`
