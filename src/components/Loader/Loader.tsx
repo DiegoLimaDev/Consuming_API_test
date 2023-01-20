@@ -4,7 +4,7 @@ import { Container, TailSpinStyle } from './LoaderStyles';
 import P from 'prop-types';
 import { Text } from '../Text/Text';
 import { useIsDarkMode } from '../../utils/GlobalContext';
-import { theme } from '../../utils/theme';
+import { theme } from '../../styles/theme';
 
 export const Loader = ({ visible }: { visible: boolean }) => {
   const { isDarkMode, setIsDarkMode } = useIsDarkMode();
