@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { BackgroundColor } from './components/BackgroundColor/BackgroundColor';
 import { Loader } from './components/Loader/Loader';
 import { ProductsMap } from './components/ProductsMap/ProductsMap';
-import { GlobalStyle } from './globalStyles';
+import { GlobalStyle } from './styles/globalStyles';
 import { useIsDarkMode } from './utils/GlobalContext';
 
 export const App = () => {
