@@ -26,14 +26,15 @@ export const GridComponent = ({ data }: { data: dataShape[] }) => {
   return (
     <Grid
       container
+      justifyContent="center"
       rowSpacing={3}
       columnSpacing={5}
       spacing={{ xs: 'auto', md: 'auto' }}
       columns={{ xs: 2, sm: 8, md: 12 }}
-      sx={{ width: 'fit-content', margin: '0 5rem 5rem 0' }}
+      sx={{ width: 'fit-content', marginBottom: '5rem' }}
     >
       {data.map((e) => (
-        <MyGrid item xs={2} sm={3} md={2.5} key={e.id} darkmode={isDarkMode}>
+        <MyGrid item key={e.id} darkmode={isDarkMode}>
           <Item darkmode={isDarkMode}>
             <CustomImage src={e.image} height="200" width="200" alt={e.title} />
             <Text
