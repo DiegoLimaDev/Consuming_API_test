@@ -14,6 +14,7 @@ export const DialogBox = styled(Box)(
     background-color: ${darkmode === 'light'
       ? theme.colors.iceWhite
       : theme.colors.black};
+    height: fit-content;
   `,
 );
 
