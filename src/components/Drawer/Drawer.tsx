@@ -85,14 +85,14 @@ export const CustomDrawer = ({ data }: { data: dataShape[] }) => {
             <Text size="medium" darkmode={isDarkMode} align="center">
               {filteredById?.description}
             </Text>
+            <DialogActions>
+              <Button onClick={() => setIsDrawerVisible(false)}>
+                <Text size="medium2" darkmode={isDarkMode}>
+                  Fechar
+                </Text>
+              </Button>
+            </DialogActions>
           </DialogContent>
-          <DialogActions>
-            <Button onClick={() => setIsDrawerVisible(false)}>
-              <Text size="medium2" darkmode={isDarkMode}>
-                Fechar
-              </Text>
-            </Button>
-          </DialogActions>
         </DialogBox>
       </Dialog>
     </Container>
@@ -100,5 +100,5 @@ export const CustomDrawer = ({ data }: { data: dataShape[] }) => {
 };
 
 CustomDrawer.propTypes = {
-  data: P.array,
+  data: P.array.isRequired,
 };
