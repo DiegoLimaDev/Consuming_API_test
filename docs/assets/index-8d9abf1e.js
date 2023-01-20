@@ -350,7 +350,7 @@ Error generating stack: `+i.message+`
     min-height: 50rem;
     background-color: ${e==="dark"?$e.colors.black:$e.colors.iceWhite};
     position: relative;
-    width: 35rem;
+    width: 33rem;
   `),x5=ke(cs)(({darkmode:e})=>Me`
     padding: 2rem;
     text-align: 'center';
