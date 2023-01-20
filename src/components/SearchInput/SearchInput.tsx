@@ -2,7 +2,7 @@ import { Icon } from '@iconify/react';
 import { IconButton, InputAdornment } from '@mui/material';
 import React from 'react';
 import { useSearchValue } from '../../utils/GlobalContext';
-import { theme } from '../../utils/theme';
+import { theme } from '../../styles/theme';
 import { Container, CustomInput } from './SearchInputStyle';
 
 export const SearchInput = () => {
