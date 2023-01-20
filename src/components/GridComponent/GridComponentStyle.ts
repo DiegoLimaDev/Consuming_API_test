@@ -10,7 +10,7 @@ export const MyGrid = styled(Grid)(
       ? theme.colors.black
       : theme.colors.iceWhite};
     position: relative;
-    width: 35rem;
+    width: 33rem;
   `,
 );
 
