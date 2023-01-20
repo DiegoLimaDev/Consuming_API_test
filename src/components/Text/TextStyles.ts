@@ -1,17 +1,19 @@
 import styled from '@emotion/styled';
 import { Box, css } from '@mui/material';
-import { theme } from '../../utils/theme';
+import { theme } from '../../styles/theme';
 
 export const Container = styled(Box)(
   ({
     size,
     darkmode,
     align,
+    weight,
     margin,
   }: {
     size: string;
     darkmode?: string;
     align?: string;
+    weight?: string;
     margin?: string;
   }) => css`
     font-family: 'Nunito', sans-serif;
@@ -27,5 +29,6 @@ export const Container = styled(Box)(
     color: ${darkmode === 'dark' ? theme.colors.iceWhite : theme.colors.black};
     text-align: ${align};
     margin: ${margin};
+    font-weight: ${weight};
   `,
 );

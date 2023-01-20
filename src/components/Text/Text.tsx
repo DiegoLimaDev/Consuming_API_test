@@ -7,16 +7,24 @@ export const Text = ({
   size,
   darkmode,
   align,
+  weight,
   margin,
 }: {
   children?: any;
   size: string;
   darkmode?: string;
   align?: string;
+  weight?: string;
   margin?: string;
 }) => {
   return (
-    <Container size={size} darkmode={darkmode} align={align} margin={margin}>
+    <Container
+      size={size}
+      darkmode={darkmode}
+      align={align}
+      margin={margin}
+      weight={weight}
+    >
       <p>{children}</p>
     </Container>
   );
@@ -27,5 +35,6 @@ Text.propTypes = {
   size: P.string.isRequired,
   darkmode: P.string,
   align: P.string,
+  weight: P.string,
   margin: P.string,
 };
