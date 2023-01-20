@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Stack } from '@mui/material';
 import { Box, css } from '@mui/system';
-import { theme } from '../../utils/theme';
+import { theme } from '../../styles/theme';
 
 export const Container = styled(Box)(
   () => css`

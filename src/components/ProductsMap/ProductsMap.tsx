@@ -1,5 +1,5 @@
 import React from 'react';
-import { dataShape } from '../../services/interface';
+import { dataShape } from '../../utils/interface';
 import P from 'prop-types';
 import {
   useCategory,
@@ -18,10 +18,10 @@ import {
   SearchContainer,
 } from './ProductsMapsStyle';
 import { GridComponent } from '../GridComponent/GridComponent';
-import { SelectCategory } from '../SelectCategory/SelectCategory';
+import { SelectComponent } from '../SelectComponent/SelectComponent';
 import { SearchInput } from '../SearchInput/SearchInput';
-import { SelectOrder } from '../SelectOrder/SelectOrder';
-import { filterService } from '../../services/filter';
+import { filterService } from '../../utils/filter';
+import { selectCategory, selectOrder } from '../../utils/selectArraysData';
 
 export const ProductsMap = ({ data }: { data: dataShape[] }) => {
   const { value, setValue } = useSearchValue();
@@ -41,11 +41,21 @@ export const ProductsMap = ({ data }: { data: dataShape[] }) => {
           alignItems="center"
           justifyContent="space-between"
         >
-          <SelectCategory />
+          <SelectComponent
+            selectData={selectCategory}
+            title="Categoria"
+            value={category}
+            setValue={(e: any) => setCategory(e)}
+          />
           <CustomSeparator />
           <SearchInput />
           <CustomSeparator />
-          <SelectOrder />
+          <SelectComponent
+            selectData={selectOrder}
+            title="Ordem"
+            value={orderBy}
+            setValue={(e: any) => setOrderBy(e)}
+          />
         </MyCustomStack>
       </SearchContainer>
       {filteredData.length === 0 ? (
