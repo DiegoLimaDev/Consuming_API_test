@@ -1,6 +1,6 @@
 ## `Projeto criado utilizando Vite + React + TS`
 
-Em todos os meus projetos utilizo o prettier e o eslint, talves você obtenha algum erro de formatação após o git clone, mas não impedirá a visualização do projeto.
+Em todos os meus projetos utilizo o prettier e o eslint, talvez você obtenha algum erro de formatação após o git clone, mas não impedirá a visualização do projeto.
 
 
 ## `npm i`
