@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Button, css } from '@mui/material';
-import { theme } from '../../utils/theme';
+import { theme } from '../../styles/theme';
 
 export const MyButton = styled(Button)(
   () => css`
