@@ -1,15 +1,13 @@
 import styled from '@emotion/styled';
-import { Drawer, Rating } from '@mui/material';
+import { Rating } from '@mui/material';
 import { Box, css } from '@mui/system';
-import { theme } from '../../utils/theme';
+import { theme } from '../../styles/theme';
 
 export const Container = styled(Box)(
   () => css`
     padding: 2rem;
   `,
 );
-
-export const MyDrawer = styled(Drawer)(() => css``);
 
 export const DialogBox = styled(Box)(
   ({ darkmode }: { darkmode: string }) => css`
@@ -39,7 +37,7 @@ export const CustomRating = styled(Rating)(
 export const RatingContainer = styled(Box)(
   () => css`
     display: block;
-    margin: 0rem auto;
+    margin: 1rem auto;
     width: fit-content;
   `,
 );
