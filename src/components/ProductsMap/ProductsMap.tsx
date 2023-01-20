@@ -34,11 +34,7 @@ export const ProductsMap = ({ data }: { data: dataShape[] }) => {
   const filteredData = filterService(data, orderBy, category, value);
 
   return (
-    <Container
-      onClick={() =>
-        isDrawerVisible ? setIsDrawerVisible(!isDrawerVisible) : null
-      }
-    >
+    <Container>
       <SearchContainer>
         <MyCustomStack
           direction="row"

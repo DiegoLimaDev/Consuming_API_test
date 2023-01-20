@@ -17,7 +17,11 @@ import {
 } from './DrawerStyles';
 import P from 'prop-types';
 import { Text } from '../Text/Text';
-import { useIsDarkMode, useNumberId } from '../../utils/GlobalContext';
+import {
+  useIsDarkMode,
+  useIsDrawerVisible,
+  useNumberId,
+} from '../../utils/GlobalContext';
 import { dataShape } from '../../services/interface';
 import { Stack } from '@mui/system';
 import { getDecimals } from '../../services/getDecimalsNumbers';
@@ -37,11 +41,12 @@ export const CustomDrawer = ({
   visible,
   data,
 }: {
-  visible: boolean;
+  visible?: boolean;
   data: dataShape[];
 }) => {
   const { numberId, setNumberId } = useNumberId();
   const { isDarkMode, setIsDarkMode } = useIsDarkMode();
+  const { isDrawerVisible, setIsDrawerVisible } = useIsDrawerVisible();
 
   const filteredById = data.find((e) => e.id === numberId);
 
@@ -101,10 +106,10 @@ export const CustomDrawer = ({
         </Text>
       </MyDrawer> */}
       <Dialog
-        open={visible}
+        open={isDrawerVisible}
         TransitionComponent={Transition}
         keepMounted
-        onClose={() => !visible}
+        onClose={() => setIsDrawerVisible(false)}
       >
         <DialogBox darkmode={isDarkMode}>
           <DialogTitle>
@@ -156,7 +161,7 @@ export const CustomDrawer = ({
             </Text>
           </DialogContent>
           <DialogActions>
-            <Button onClick={() => !visible}>
+            <Button onClick={() => setIsDrawerVisible(false)}>
               <Text size="medium2" darkmode={isDarkMode}>
                 Fechar
               </Text>
