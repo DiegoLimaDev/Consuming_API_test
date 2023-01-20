@@ -1,4 +1,4 @@
-#Projeto criado utilizando Vite + React + TS.
+##`Projeto criado utilizando Vite + React + TS`
 
 Em todos os meus projetos utilizo o prettier e o eslint, talves você obtenha algum erro de formatação após o git clone, mas não impedirá a visualização do projeto.
 
