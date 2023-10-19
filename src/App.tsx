@@ -14,10 +14,9 @@ export const App = () => {
 
   useEffect(() => {
     const fecthData = async () => {
-      let result;
       setIsLoading(true);
-      result = ProductsService.getProducts();
-      setMyData(await result);
+      const result = await new ProductsService().getProducts();
+      setMyData(result);
       setIsLoading(false);
     };
     fecthData();
