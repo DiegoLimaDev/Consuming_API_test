@@ -12,13 +12,13 @@ export const Header = () => {
     <Container>
       <Stack direction="column">
         <Text size="title" darkmode="dark" margin="0 0 0 2rem">
-          Polibras Software
+          Oficina React
         </Text>
         <Text size="medium2" darkmode="dark" margin="1rem 0 1rem 2rem">
-          Teste Técnico
+          Softex
         </Text>
         <Text size="medium2" darkmode="dark" margin="1rem 0 3rem 2rem">
-          Estágio frontend
+          Diego Lima
         </Text>
         <Stack direction="row">
           <Text size="big" darkmode="dark" margin="0 0 0 2rem">
